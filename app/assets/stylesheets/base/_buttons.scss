@@ -1,0 +1,7 @@
+#{$all-buttons} {
+  @include bitter-button;
+
+  &.close {
+    @include compact-button;
+  }
+}

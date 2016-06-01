@@ -1,0 +1,32 @@
+body {
+  main {
+    @include outer-container(90%);
+
+    margin: $base-spacing auto;
+  }
+
+  #medium-screen-indicator {
+    display: none;
+    @include media($medium-screen) {
+      display: block;
+    }
+  }
+
+  #large-screen-indicator {
+    display: none;
+    @include media($large-screen) {
+      display: block;
+    }
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: $absolute-base-font-size;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

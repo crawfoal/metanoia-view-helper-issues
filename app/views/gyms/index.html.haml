@@ -1,0 +1,12 @@
+%table#gyms
+  %tr
+    %th{ colspan: '2' } Gym
+  - @gyms.each do |gym|
+    %tr
+      %td
+        = link_to gym.name, gym
+      %td
+        = fa_icon 'minus'
+
+- if GymPolicy.new(current_user, Gym).new?
+  = link_to 'Create a New Gym', new_gym_path, id: 'new_gym'

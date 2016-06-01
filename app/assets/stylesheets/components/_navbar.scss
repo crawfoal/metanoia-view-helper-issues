@@ -1,0 +1,134 @@
+nav {
+  $background-color: $secondary-background-color;
+  $font-color: $base-font-color;
+  $divider-border: 2px solid darken($background-color, 10%);
+  $font-size: 1rem;
+  $line-height: 4rem;
+  $padding: 1rem;
+
+  background-color: $background-color;
+  font-size: $font-size;
+
+  @include clearfix;
+
+  li {
+    color: $font-color;
+    display: block;
+    padding: 0 $padding;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: lighten($font-color, 30%);
+    }
+
+    @include media($medium-screen) {
+      display: inline-block;
+      float: none;
+      padding-left: 0;
+    }
+  }
+
+  a {
+    display: inline-block;
+    line-height: $line-height;
+    vertical-align: middle;
+  }
+
+  #collapsable_content {
+    clear: both;
+    display: none;
+
+    @include media($medium-screen) {
+      clear: none;
+    }
+  }
+
+  .logo {
+    color: $accent-color;
+    float: left;
+    font-size: 2 * $font-size;
+    padding: 0 $padding;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $light-font-color;
+    }
+
+    .fa {
+      color: inherit;
+    }
+  }
+
+  #navbar_main_menu,
+  #navbar_tools {
+    border-top: $divider-border;
+    width: 100%;
+
+    > * {
+      text-align: right;
+    }
+
+    @include media($medium-screen) {
+      border: 0;
+      width: auto;
+
+      & * {
+        text-align: left;
+      }
+    }
+  }
+
+  @include media($medium-screen) {
+    #navbar_main_menu {
+      float: left;
+    }
+
+    #navbar_tools {
+      float: right;
+    }
+  }
+
+  #navbar_menu_button {
+    float: right;
+    padding-right: $padding;
+  }
+
+  #switch_roles {
+    position: relative;
+
+    form {
+      @include clearfix;
+      @include box-shadow(inset 0 0 10px darken($background-color, 10%));
+
+      background-color: darken($background-color, 5%);
+      display: none;
+      margin-bottom: $padding;
+      min-width: 100%;
+      padding: $padding;
+
+      @include media($medium-screen) {
+        @include box-shadow(none);
+
+        background-color: $background-color;
+        position: absolute;
+        right: 0;
+      }
+
+      select {
+        float: right;
+        margin: 0;
+      }
+    }
+
+    &:focus,
+    &:hover {
+      form {
+        @include media($medium-screen) {
+          display: block;
+        }
+      }
+    }
+  }
+}

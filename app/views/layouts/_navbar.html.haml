@@ -1,0 +1,25 @@
+%nav
+  = link_to root_path, class: 'logo' do
+    = fa_icon 'line-chart'
+  = link_to '#', id: 'navbar_menu_button' do
+    = fa_icon 'bars'
+    Menu
+  #collapsable_content
+    %ul#navbar_main_menu
+      %li.nav-link
+        = link_to 'Gyms', gyms_path
+      %li.nav-link
+        = link_to 'Ipsum', '#'
+      %li.nav-link
+        = link_to 'My Log', athletes_climb_logs_path
+    - if user_signed_in?
+      %ul#navbar_tools
+        %li.nav-link#sign_out
+          = link_to 'Sign Out', destroy_user_session_path, method: :delete
+        %li.nav-link
+          = link_to 'Profile', profile_path
+        - if current_user.roles.size > 1
+          %li.nav-link#switch_roles
+            = link_to 'Switch Roles', '#'
+            = form_for current_user, url: users_current_role_path, method: :put do |f|
+              = f.collection_select :current_role, current_user.roles, :name, :name

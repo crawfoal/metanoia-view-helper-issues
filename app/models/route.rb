@@ -1,0 +1,2 @@
+class Route < Climb
+end

@@ -1,0 +1,95 @@
+.gyms.show {
+
+  h1 {
+    background-color: $emphasis-background-color;
+    color: white;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  #climbs {
+    max-width: 30em;
+
+    @include display(flex);
+    @include flex-wrap(wrap);
+    a {
+      @include compact-bitter-button;
+      @include no-color-button;
+      border-radius: 0;
+      margin: 1px;
+      text-align: center;
+      width: 4em;
+    }
+    @each $color-name, $color-value in $climb-colors {
+      a.#{$color-name} {
+        background: none;
+        @include button-color($color-value);
+      }
+    }
+  }
+
+  #current_section {
+    margin-top: $base-spacing;
+    margin-bottom: $base-spacing;
+
+    @include media($medium-screen) {
+      margin-left: $base-spacing;
+      margin-right: $base-spacing;
+    }
+  }
+
+  .edit-gym-link {
+    float: right;
+    margin-top: $small-spacing;
+
+    @include bitter-button(white, $border: $dark-border);
+  }
+
+  .gym-info {
+    @include display(flex);
+    @include flex-direction(column);
+    @include media($medium-screen) {
+      @include flex-direction(row);
+    }
+  }
+
+  .change-section {
+    margin-top: $base-spacing;
+
+    @include bitter-button(white, $border: $dark-border);
+    display: none;
+
+    .fa {
+      float: right;
+    }
+  }
+
+  ul {
+    background-color: $emphasis-background-color;
+    padding: $small-spacing;
+    padding-bottom: 0;
+    margin-top: $base-spacing;
+
+    li {
+      a {
+        @include bitter-button(white, $border: 0);
+        border-radius: 0;
+        margin-bottom: $small-spacing;
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        width: 100%;
+      }
+
+      a.active {
+        @include button-color($base-font-color);
+      }
+    }
+  }
+
+  .new-climb-link {
+    @include bitter-button;
+    margin-top: $base-spacing;
+  }
+}

@@ -1,0 +1,32 @@
+= README
+
+* Ruby version - 2.3.0
+
+* Rails version - 4.2.6
+
+* Database creation - `rake db:setup`
+
+* How to run the test suite - `bundle exec rspec`
+
+* Summary of issues:
+
+  * With ammeter installed, and `include FontAwesome::Rails::IconHelper` in the
+    `ApplicationHelper` (the current state):
+
+    * If you run all specs, there shouldn't be any errors raised.
+
+    * If you run only `spec/views/athletes/climb_logs/index.html.haml_spec.rb`,
+      you should get an error for `undefined method fa_icon`.
+
+  * If you keep ammeter installed, but comment out the line `include
+    FontAwesome::Rails::IconHelper` in `ApplicationHelper`, then you will see
+    5 errors, all due to `fa_icon` not being defined. Notice that the helper
+    method I have defined (`render_flash`) is still defined, and so are all of
+    the Rail's helpers.
+
+  * If you keep `include FontAwesome::Rails::IconHelper` commented out, and
+    take out ammeter (you'll need to comment out `require 'ammeter/init'` in
+    `spec/generator_helper.rb`), there shouldn't be any errors due to
+    `fa_icon` not being defined (but obviously there will be other errors due
+    to ammeter not being there - these should all be for the
+    `SeedMigrationGenerator` group).

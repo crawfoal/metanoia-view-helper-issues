@@ -1,0 +1,86 @@
+// Breakpoints
+$medium-screen: 600px;
+$large-screen: 900px;
+
+// Typography
+$base-font-family: 'Source Sans Pro', sans-serif;
+$heading-font-family: 'Lustria', serif;
+$max-header-to-increase-font-size: 4;
+
+// Font Sizes
+$absolute-base-font-size: 16px;
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$tiny-spacing: $small-spacing / 2;
+$base-z-index: 0;
+
+// Grays
+$dark-gray: #2e2e2e;
+$light-gray: lighten($dark-gray, 25%);
+$lighter-gray: lighten($light-gray, 25%);
+$lightest-gray: lighten($lighter-gray, 15%);
+
+// Brand Colors
+$linen: #eae2d6;
+$oyster: #d5c3aa;
+$pewter: #867666;
+$lemon-tea: #e1b80d;
+
+// Message Colors
+$brick-red: #b5433f;
+$light-brick-red: lighten($brick-red, 10%);
+$yellow: #ffd56e;
+$green: #649c43;
+
+// Climb Colors
+$climb-colors: (
+  red: #b71c1c,
+  pink: #ec407a,
+  purple: #7b1fa2,
+  blue: #0d47a1,
+  teal: #00838f,
+  green: #2e7d32,
+  yellow: #fdd835,
+  orange: #ef6c00,
+  brown: #6d4c41,
+  black: #000000,
+  white: #ffffff
+);
+
+// Font Colors
+$base-font-color: $dark-gray;
+$light-font-color: white;
+$action-color: $pewter;
+$action-color-dark: darken($action-color, 13%);
+$action-color-light: lighten($pewter, 10%);
+$accent-color: $lemon-tea;
+$accent-color-light: lighten($accent-color, 20%);
+$subtle-accent-color: $oyster;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: $linen;
+$emphasis-background-color: $oyster;
+
+// Border
+$base-border-color: $action-color-light;
+$base-border: 1px solid $base-border-color;
+$secondary-border-color: darken($secondary-background-color, 15%);
+$secondary-border: 1px solid $secondary-border-color;
+$dark-border: 1px solid $base-font-color;
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

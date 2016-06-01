@@ -1,0 +1,2 @@
+class Boulder < Climb
+end
