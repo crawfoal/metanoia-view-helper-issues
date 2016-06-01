@@ -30,3 +30,10 @@
     `fa_icon` not being defined (but obviously there will be other errors due
     to ammeter not being there - these should all be for the
     `SeedMigrationGenerator` group).
+
+  * If you keep `include FontAwesome::Rails::IconHelper` commented out, and have
+    ammeter installed, and run the server in development mode, everything works
+    fine - you don't get any errors when you view pages that use the `fa_icon`
+    method.
+
+  * Moving ammeter out of the test group doesn't help.
