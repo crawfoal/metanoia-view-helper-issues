@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe FlashHelper, type: :helper do
+  helper FontAwesome::Rails::IconHelper
+
   describe '#render_flash' do
     it 'includes flash messages of types :alert, :notice, and :warning' do
       allow(helper).to receive(:flash).and_return(
