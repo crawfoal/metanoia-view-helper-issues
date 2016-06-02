@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'gyms/show.html.haml', type: :view do
+  helper FontAwesome::Rails::IconHelper
+
   context 'for a non-admin user' do
     it "doesn't show the link to edit the gym" do
       allow(view).to receive(:current_user).and_return(Visitor.new)

@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'gyms/index.html.haml', type: :view do
+  helper FontAwesome::Rails::IconHelper
+
   context "when the user's current role isn't admin" do
     it "doesn't show the link to create a new gym" do
       user = create :athlete
